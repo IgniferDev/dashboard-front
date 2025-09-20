@@ -1,0 +1,57 @@
+<div class="container">
+  <!-- Subida de archivo -->
+  <div class="card upload-card">
+    <h2>📂 Subir Dataset</h2>
+    <div class="upload-controls">
+      <input type="file" (change)="onFileSelected($event)" />
+      <button (click)="onUpload()" [disabled]="!selectedFile">📤 Subir</button>
+    </div>
+  </div>
+
+  <!-- Vista previa -->
+  <div class="card preview-card" *ngIf="head.length > 0">
+    <h2>👀 Vista previa (head)</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let key of head[0] | keyvalue">{{ key.key }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of head">
+            <td *ngFor="let col of row | keyvalue">{{ col.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Gráficos -->
+  <div class="grid">
+  <!-- Faltantes -->
+  <div class="card wide" *ngIf="missingData.labels?.length">
+    <h2>❓ Valores faltantes</h2>
+    <canvas baseChart [data]="missingData" [type]="'bar'"></canvas>
+  </div>
+
+  <!-- Duplicados -->
+  <div class="card" *ngIf="duplicatesData.datasets[0].data.length">
+    <h2>📑 Filas duplicadas</h2>
+    <canvas baseChart [data]="duplicatesData" [type]="'doughnut'"></canvas>
+  </div>
+
+  <!-- Tipos de datos -->
+  <div class="card" *ngIf="dtypesData.datasets[0].data.length">
+    <h2>🔤 Tipos de datos</h2>
+    <canvas baseChart [data]="dtypesData" [type]="'pie'"></canvas>
+  </div>
+
+  <!-- Valores únicos -->
+  <div class="card wide" *ngIf="uniqueCountsData.datasets[0].data.length">
+    <h2>🔢 Valores únicos</h2>
+    <canvas baseChart [data]="uniqueCountsData" [type]="'bar'"></canvas>
+  </div>
+</div>
+
+</div>

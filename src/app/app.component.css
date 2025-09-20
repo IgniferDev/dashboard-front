@@ -1,0 +1,15 @@
+/* Navbar */
+.navbar {
+  background: #2c3e50;
+  color: white;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
