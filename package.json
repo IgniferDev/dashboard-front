@@ -20,7 +20,8 @@
   "@angular/router": "^16.2.0",
   "@angular/cdk": "^16.2.0",
   "chart.js": "^4.5.0",
-  "ng2-charts": "^4.1.1"
+  "ng2-charts": "^4.1.1",
+  "zone.js": "^0.13.2"
 },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.0",
