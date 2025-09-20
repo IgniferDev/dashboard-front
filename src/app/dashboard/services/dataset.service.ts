@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DatasetService {
-  private baseUrl = 'https://dashboard-back-oqt9.onrender.com/api';
-  private API = 'http://127.0.0.1:8000/api/';
+  private API = 'https://dashboard-back-oqt9.onrender.com/api';
+  private APILOCAL = 'http://127.0.0.1:8000/api/';
 
   constructor(private http: HttpClient) {}
 
